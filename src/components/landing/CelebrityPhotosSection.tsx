@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Play, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+
+const VIDEO_SOURCES = [
+  "https://img.virax.ai/admin_videos/1770177790544_ao.mp4",
+  "https://img.virax.ai/admin_videos/1770177818648_tom-holland.mp4",
+  "https://img.virax.ai/admin_videos/1770177836750_trump.mp4",
+  "https://img.virax.ai/admin_videos/1770177857572_meimei.mp4",
+];
 
 export function CelebrityPhotosSection() {
   return (
@@ -40,18 +47,21 @@ export function CelebrityPhotosSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-12 md:mb-16 max-w-2xl md:max-w-4xl mx-auto"
         >
-          {[1, 2, 3, 4].map((i) => (
+          {VIDEO_SOURCES.map((src, i) => (
             <a
               key={i}
               href="https://www.virax.ai/image2video"
               className="group relative aspect-[9/16] rounded-xl overflow-hidden border border-gray-800 bg-gray-900/80 hover:border-purple-500/40 transition-colors cursor-pointer block"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-gray-900" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-purple-600/80 flex items-center justify-center group-hover:bg-purple-500/90 transition-colors">
-                  <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                </div>
-              </div>
+              <video
+                src={src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-hidden
+              />
             </a>
           ))}
         </motion.div>

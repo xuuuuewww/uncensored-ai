@@ -8,11 +8,11 @@ import { Footer } from "@/components/landing/Footer";
 import { StructuredData } from "@/components/landing/StructuredData";
 
 const PICTURE_IMAGE =
-  "https://images.unsplash.com/photo-1764258560164-97f682adef36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+  "https://img.virax.ai/admin_images/1770178387088_uncensored-image.png";
 const VIDEO_IMAGE =
   "https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 const CHAT_IMAGE =
-  "https://images.unsplash.com/photo-1714899984906-a3e8f43025a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+  "https://img.virax.ai/admin_images/1770178484566_uncensored-chat.jpg";
 
 export default function Home() {
   return (
