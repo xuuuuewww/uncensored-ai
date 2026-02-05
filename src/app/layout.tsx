@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://www.virax.ai";
+const siteUrl = "https://uncensored-ai.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

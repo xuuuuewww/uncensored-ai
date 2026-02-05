@@ -1,21 +1,33 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { getAllPostsMeta } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.uncensored-ai.app/' // 您的域名
+const baseUrl = "https://uncensored-ai.app";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPostsMeta();
+
+  const blogEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
+    ...posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+  ];
 
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: "daily",
       priority: 1,
     },
-    // 如果有其他页面，继续往下加
-    // {
-    //   url: `${baseUrl}/about`,
-    //   lastModified: new Date(),
-    //   changeFrequency: 'monthly',
-    //   priority: 0.8,
-    // },
-  ]
+    ...blogEntries,
+  ];
 }

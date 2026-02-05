@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -148,4 +149,44 @@ html {
 .landing {
   --primary: #b847ff;
   --primary-foreground: #fff;
+}
+
+/* Prose: ensure markdown tables render as tables with borders */
+.prose table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+.prose thead {
+  display: table-header-group;
+}
+.prose tbody {
+  display: table-row-group;
+}
+.prose tr {
+  display: table-row;
+}
+.prose th,
+.prose td {
+  display: table-cell;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  font-weight: 600;
+  background: var(--muted);
+}
+.prose thead th {
+  background: var(--muted);
+}
+.prose tbody tr:nth-child(even) td {
+  background: color-mix(in oklch, var(--muted) 35%, transparent);
+}
+.prose tbody tr:hover td {
+  background: var(--muted);
+}
+.prose tbody tr:nth-child(even):hover td {
+  background: var(--muted);
 }
