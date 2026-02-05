@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPostsMeta } from "@/lib/blog";
+import { Navbar } from "@/components/landing/Navbar";
+import { Footer } from "@/components/landing/Footer";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -14,7 +16,8 @@ export default async function BlogPage() {
   const posts = await getAllPostsMeta();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground pt-16">
+      <Navbar />
       <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="mb-8 text-3xl font-bold tracking-tight">Blog</h1>
         <ul className="space-y-8">
@@ -65,6 +68,7 @@ export default async function BlogPage() {
           )}
         </ul>
       </main>
+      <Footer />
     </div>
   );
 }
