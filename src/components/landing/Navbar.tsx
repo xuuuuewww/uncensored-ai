@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -26,7 +27,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="https://www.virax.ai/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src={logo}
                 alt="Uncensored AI"
@@ -37,7 +38,7 @@ export function Navbar() {
               <span className="text-white font-bold text-xl tracking-tight">
                 Uncensored<span className="text-purple-500">AI</span>
               </span>
-            </a>
+            </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -47,9 +48,9 @@ export function Navbar() {
               <a href="#chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 AI Chat
               </a>
-              <a href="#why-choose" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Why Us
-              </a>
+              <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Blog
+              </Link>
               <a
                 href="https://www.virax.ai/image2video"
                 className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all shadow-[0_0_15px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)]"
@@ -80,9 +81,9 @@ export function Navbar() {
             <a href="#chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               AI Chat
             </a>
-            <a href="#why-choose" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Why Us
-            </a>
+            <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              Blog
+            </Link>
             <a href="https://www.virax.ai/image2video" className="bg-purple-600 text-white block px-3 py-2 rounded-md text-base font-medium mt-4">
               Get Started
             </a>

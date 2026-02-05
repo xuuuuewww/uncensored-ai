@@ -80,7 +80,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://www.virax.ai/image2video" className="text-gray-500 hover:text-purple-400 text-sm transition-colors">
+                <a href="/blog" className="text-gray-500 hover:text-purple-400 text-sm transition-colors">
                   Blog
                 </a>
               </li>
@@ -108,15 +108,10 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-900 pt-8">
           <p className="text-gray-600 text-sm">
-            © 2025 Uncensored AI. All rights reserved.
+            © 2026 Uncensored AI. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <span className="text-gray-700 text-xs">
-              System Status: <span className="text-green-500">Operational</span>
-            </span>
-          </div>
         </div>
       </div>
     </footer>
